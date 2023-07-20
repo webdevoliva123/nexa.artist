@@ -37,25 +37,22 @@ const loadRoutes = (routesPath) => {
 loadRoutes(routesPath);
 
 //
-app.get('/home',(req,res) => {
-    return res.send({
-        success : true,
-        message : "Welcome to nexa sound"
-    })
+app.get('/',(req,res) => {
+    return res.sendFile(path.join(__dirname+'/public/index.html'));
 })
 
 // SWAGGER CONFIG
 const swaggerOptions = {
-    definition: {
-      openapi: "3.0.0",
-      info: {
-        title: "NEXA SOUND ARTIST API DOCUMENTATION",
-        version: "1.0.0",
-      },
-      servers: [{ url: 'http://localhost:5500/' }],
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "NEXA SOUND ARTIST API DOCUMENTATION",
+      version: "1.0.0",
     },
-    apis: ['./routes/artist.router.js', './routes/public.router.js','./app.js'],
-  };
+    servers: [{ url: 'http://localhost:3000/' }], // Change the port to 3000
+  },
+  apis: ['./routes/artistRouter.js', './routes/publicRouter.js'],
+};
     
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions)
