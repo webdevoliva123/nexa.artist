@@ -18,36 +18,41 @@
         .container{
             width: 100%;
             height: 100vh;
-            background: #000000;
+            background: #111111;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
         }
 
+        .navbar{
+            background: #000000;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 100px ;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         .container-content{
             width: auto;
         }
 
-        .content-imgBx{
-            width: 300px;
-            height: 150px;
-            margin: 0 auto;
+        .navbar-imgBx{
+            width: 180px;
+            height: 60px;
         }
 
-        .content-imgBx > img{
+        .navbar-imgBx > img{
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
         .content-heading{
-            /* background: linear-gradient(to right, #8a2387, #e94057, #f27121);
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; */
             color: #fff;
             text-align: center;
             font-weight: 400;
@@ -60,16 +65,68 @@
             text-align: center;
             margin: 20px 0;
         }
+
+        .navbar-links{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar-links a{
+            color: whitesmoke;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar-links-sprateLine{
+            width: 2px;
+            height: 40px;
+            background: #fff;
+        }
+
+        .nexaImage{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            z-index: 2;
+            position: relative;
+        }
+
+        .nexaImage img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .textContent{
+            z-index: 5;
+            position: relative;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="container-content">
-            <div class="content-imgBx">
+        <div class="navbar">
+            <div class="navbar-imgBx">
                 <img src="https://res.cloudinary.com/dkz1pnb2b/image/upload/v1689868125/NEXA%20SOUND%20ASSETS/Screenshot_2023-07-19_at_12.30.45_AM_copy_ttvc4k.png" alt="NEXA SOUND | LOGO">
             </div>
-            <h1 class="content-heading">404 Page Not Found</h1>
-            <a href="http://localhost:3000"><article class="content-para">GO TO NEXA SOUND</article></a>
+            <div class="navbar-links">
+                <a href="http://localhost:3000/NEXA.EXPRIENCE">Expreince</a>
+                <a href="http://localhost:3000/NEXA.SUPPORT">Support</a>
+                <div class="navbar-links-sprateLine"></div>
+                <a href="http://localhost:3000/login">Login</a>
+                <a href="http://localhost:3000/register">Register</a>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="nexaImage">
+                <img src="https://res.cloudinary.com/dkz1pnb2b/image/upload/v1689871904/NEXA%20SOUND%20ASSETS/Ecoyuniverse_create_logo_for_music_website_for_this_image_1fe6343f-4ce0-48fa-b613-7d6b97ac0c4d_1_-removebg-preview_1_co2lgv.jpg" alt="">
+            </div>
+            <div class="textContent">
+                <h1 class="content-heading">404 Page Not Found</h1>
+                <a href="http://localhost:3000"><article class="content-para">GO TO NEXA SOUND</article></a>
+            </div>
         </div>
     </div>
 </body>
